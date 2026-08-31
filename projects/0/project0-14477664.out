@@ -1,0 +1,34 @@
+==================================================================
+  CSC/DSE 489/589 --- Project 0 receipt
+==================================================================
+  user                   101100415@SDSMT.LOCAL
+  timestamp (UTC)        2026-08-31 22:39:59
+
+-- scheduler ------------------------------------------------------
+  job_id                 14477664
+  job_name               project0
+  job_partition          compute
+  job_nodelist           node012
+  submit_host            cllogin002
+  job_account            csc489
+  cpus_per_task          4
+  cpus_on_node           4
+
+-- machine --------------------------------------------------------
+  hostname               node012
+  cpu model              Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+  logical cores          48
+  total memory           251.3 GiB
+  julia version          1.12.7
+  julia threads          4
+  BLAS threads           2
+
+-- warm-up --------------------------------------------------------
+  matmul size            1500 x 1500
+  elapsed                0.050 s
+  GFLOP/s                135.7
+  sanity check           ok
+
+==================================================================
+  RECEIPT   user=101100415@SDSMT.LOCAL   job=14477664   node=node012
+==================================================================
