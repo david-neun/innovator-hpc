@@ -13,6 +13,6 @@
 
 module load julia
 
-julia test.jl -n 500 # Make sure you change the flag to your desired dimension
-
+#julia test.jl -n 500 # Make sure you change the flag to your desired dimension
+julia david_cortes.jl -n 500 # Make sure you change the flag to your desired dimension
 
