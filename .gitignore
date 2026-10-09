@@ -1,3 +1,4 @@
 # Ignore local Julia workspace files
 julia/
 .julia/
+*.out
