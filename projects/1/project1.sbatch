@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=compute
-#SBATCH --exclusive
+##SBATCH --exclusive
 
 echo "host: $(hostname)  dir: $(pwd)  start: $(date)"
 module load julia
