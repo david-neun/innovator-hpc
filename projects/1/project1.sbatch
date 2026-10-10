@@ -9,10 +9,10 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=compute
-#SBATCH --exclusive        
+##SBATCH --exclusive        
 
 module load julia
 
 #julia test.jl -n 500 # Make sure you change the flag to your desired dimension
-julia david_cortes.jl -n 500 # Make sure you change the flag to your desired dimension
+julia david_cortes_v2.jl -n 500 # Make sure you change the flag to your desired dimension
 
