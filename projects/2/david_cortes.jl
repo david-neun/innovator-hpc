@@ -17,8 +17,10 @@
 #         and factor time like n², so the direct method falls behind the
 #         iterative ones early. At the official size (m = 80, n = 512 000)
 #         algebraic multigrid is the fastest preconditioner on the grading
-#         node (12 iterations, 3.1 s) ahead of incomplete Cholesky (212
-#         iterations, 3.8 s); the IC variant is kept below for comparison.
+#         node: smoothed aggregation 2.4 s (19 iterations, cheaper setup),
+#         Ruge–Stüben 2.9 s (12 iterations), incomplete Cholesky 3.8 s
+#         (212 iterations), direct AMD Cholesky 9.6 s. The other two
+#         variants are kept below for comparison.
 #
 # Packages required (registered): Krylov, AlgebraicMultigrid, LimitedLDLFactorizations
 # =====================================================================
@@ -26,7 +28,7 @@
 # test.jl loads this file inside its own module → load everything here.
 using LinearAlgebra, SparseArrays
 using Krylov                     # conjugate gradient
-using AlgebraicMultigrid         # Ruge–Stüben AMG used as the preconditioner
+using AlgebraicMultigrid         # algebraic multigrid used as the preconditioner
 using LimitedLDLFactorizations   # incomplete Cholesky (limited-memory LDLᵀ), alternative
 
 # ---------------------------------------------------------------------
@@ -40,7 +42,7 @@ end
 # ---------------------------------------------------------------------
 # 3D : preconditioned conjugate gradient
 # ---------------------------------------------------------------------
-const PRECOND_3D = :amg   # :amg (algebraic multigrid) or :ic (incomplete Cholesky)
+const PRECOND_3D = :amgsa # :amgsa (smoothed-aggregation AMG), :amgrs (Ruge–Stüben AMG) or :ic (incomplete Cholesky)
 const IC_MEMORY  = 0      # extra entries per column kept by the incomplete factor when :ic is used
 
 function solve3d(A::SparseMatrixCSC{Float64,Int}, b::Vector{Float64}; rtol = 1e-8)
@@ -50,16 +52,20 @@ function solve3d(A::SparseMatrixCSC{Float64,Int}, b::Vector{Float64}; rtol = 1e-
     nthreads = BLAS.get_num_threads()
     BLAS.set_num_threads(1)
     try
-        M = PRECOND_3D == :amg ? _amg_preconditioner(A) : _ic_preconditioner(A)
+        M = PRECOND_3D == :amgsa ? _amgsa_preconditioner(A) :
+            PRECOND_3D == :amgrs ? _amgrs_preconditioner(A) : _ic_preconditioner(A)
         return _pcg(A, b, M, rtol)
     finally
         BLAS.set_num_threads(nthreads)
     end
 end
 
-# M⁻¹ r = one V-cycle of classical (Ruge–Stüben) AMG built from the entries of A.
-# κ(M⁻¹A) is essentially independent of m, so the iteration count stays ~10–15.
-_amg_preconditioner(A) = aspreconditioner(ruge_stuben(A))
+# M⁻¹ r = one multigrid V-cycle built from the entries of A alone ("algebraic").
+# κ(M⁻¹A) is essentially independent of m, so the iteration count stays ~10–20.
+# Smoothed aggregation builds its coarse levels faster than classical AMG and
+# needs a few more iterations; on the grading node the trade favors it.
+_amgsa_preconditioner(A) = aspreconditioner(smoothed_aggregation(A))
+_amgrs_preconditioner(A) = aspreconditioner(ruge_stuben(A))
 
 # M = L D Lᵀ ≈ A from the lower triangle of A (A itself is untouched).
 function _ic_preconditioner(A)
