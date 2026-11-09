@@ -57,7 +57,7 @@ end
 factor_nnz(F) = try nnz(F) catch; nnz(sparse(F.L)) end
 
 # ---------------- preconditioners (Question 2) ----------------
-const ALL_PRECONDS = ["none", "jacobi", "ic", "amg"]
+const ALL_PRECONDS = ["none", "jacobi", "ic", "amg"]   # also available: ic5, ic10, ic20, amgsa
 
 # Returns (M, ldiv) for Krylov.cg:
 #   ldiv = false  →  Krylov applies M with mul!,  so M must be the INVERSE operator  (Jacobi: 1/diag)
@@ -74,6 +74,8 @@ function make_precond(name::String, A)
         return P, true
     elseif name == "amg"
         return aspreconditioner(ruge_stuben(A)), true   # classical (Ruge–Stüben) algebraic multigrid
+    elseif name == "amgsa"
+        return aspreconditioner(smoothed_aggregation(A)), true   # smoothed-aggregation AMG (cheaper setup)
     end
     error("unknown preconditioner: $name")
 end
