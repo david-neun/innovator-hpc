@@ -1,0 +1,142 @@
+node: node001   started: Sun Nov  8 10:56:17 PM CST 2026
+Direct experiments: d=2  m=[500, 1000]  orderings=["default", "natural", "rcm", "amd", "metis"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  default  order 0.000s  factor 0.060s  solve 0.015s  nnz(L)=354  fill=1.2  relres=1.0e-14
+  natural  order 0.000s  factor 0.008s  solve 0.000s  nnz(L)=519  fill=1.8  relres=2.0e-14
+  rcm      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=428  fill=1.5  relres=1.1e-14
+  amd      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=354  fill=1.2  relres=1.0e-14
+  metis    order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=394  fill=1.4  relres=1.4e-14
+
+=== d=2  m=500  n=250000 ===
+  default  order 0.000s  factor 0.503s  solve 0.028s  nnz(L)=1.25e+07  fill=10.1  relres=8.6e-11
+  natural  order 0.000s  factor 2.323s  solve 0.157s  nnz(L)=1.31e+08  fill=105.4  relres=1.3e-10
+  rcm      order 0.028s  factor 1.364s  solve 0.113s  nnz(L)=8.93e+07  fill=71.6  relres=1.1e-10
+  amd      order 0.061s  factor 0.435s  solve 0.028s  nnz(L)=1.25e+07  fill=10.1  relres=8.6e-11
+  metis    order 1.046s  factor 0.354s  solve 0.042s  nnz(L)=8.31e+06  fill=6.7  relres=9.7e-11
+
+=== d=2  m=1000  n=1000000 ===
+  default  order 0.000s  factor 1.555s  solve 0.122s  nnz(L)=5.81e+07  fill=11.6  relres=3.5e-10
+/cm/local/apps/slurm/var/spool/job16087809/slurm_script: line 23: 1157367 Killed                  julia run_direct.jl -d 2 --m 500,1000 --maxgb 10 --out results/direct_hpc.csv
+Direct experiments: d=3  m=[40, 50, 60, 80]  orderings=["default", "natural", "rcm", "amd", "metis"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  default  order 0.000s  factor 0.060s  solve 0.015s  nnz(L)=536  fill=1.5  relres=1.8e-15
+  natural  order 0.000s  factor 0.008s  solve 0.000s  nnz(L)=883  fill=2.5  relres=1.7e-15
+  rcm      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=693  fill=2.0  relres=1.7e-15
+  amd      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=536  fill=1.5  relres=1.8e-15
+  metis    order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=525  fill=1.5  relres=1.9e-15
+
+=== d=3  m=40  n=64000 ===
+  default  order 0.000s  factor 0.583s  solve 0.024s  nnz(L)=2.21e+07  fill=50.3  relres=3.0e-13
+  natural  order 0.000s  factor 1.863s  solve 0.113s  nnz(L)=1.05e+08  fill=240.0  relres=3.8e-13
+  rcm      order 0.007s  factor 0.950s  solve 0.067s  nnz(L)=6e+07  fill=136.8  relres=3.5e-13
+  amd      order 0.040s  factor 0.370s  solve 0.024s  nnz(L)=2.21e+07  fill=50.4  relres=2.9e-13
+  metis    order 0.424s  factor 0.308s  solve 0.022s  nnz(L)=1.49e+07  fill=34.0  relres=3.1e-13
+
+=== d=3  m=50  n=125000 ===
+  default  order 0.000s  factor 1.217s  solve 0.060s  nnz(L)=6.45e+07  fill=75.0  relres=5.2e-13
+  natural  order 0.000s  factor 5.862s  solve 0.143s  nnz(L)=3.23e+08  fill=375.1  relres=6.4e-13
+  rcm      order 0.017s  factor 3.002s  solve 0.197s  nnz(L)=1.83e+08  fill=212.2  relres=5.8e-13
+  amd      order 0.122s  factor 0.947s  solve 0.065s  nnz(L)=6.45e+07  fill=75.0  relres=5.2e-13
+  metis    order 0.895s  factor 0.781s  solve 0.048s  nnz(L)=4.03e+07  fill=46.9  relres=5.2e-13
+
+=== d=3  m=60  n=216000 ===
+  default  order 0.000s  factor 2.662s  solve 0.125s  nnz(L)=1.56e+08  fill=105.0  relres=7.6e-13
+/cm/local/apps/slurm/var/spool/job16087809/slurm_script: line 24: 1157436 Killed                  julia run_direct.jl -d 3 --m 40,50,60,80 --maxgb 10 --out results/direct_hpc.csv
+Iterative experiments: d=2  m=[500, 1000]  rtol=[1.0e-8]  precond=["none", "jacobi", "ic", "amg"]  BLAS threads=1  → results/iterative_hpc.csv
+Warm-up (compilation) ...
+  none    rtol=1e-06  setup 0.000s  solve 0.663s  iters     34  restarts 0  relres=8.9e-07 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.339s  iters     24  restarts 0  relres=1.0e-06 
+  ic      rtol=1e-06  setup 0.000s  solve 0.348s  iters     12  restarts 0  relres=9.9e-07 
+  amg     rtol=1e-06  setup 0.859s  solve 1.123s  iters      5  restarts 0  relres=2.1e-07 
+
+=== d=2  m=500  n=250000  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 43.831s  iters  20000  restarts 0  relres=3.1e-07 NOT CONVERGED
+  jacobi  rtol=1e-08  setup 0.029s  solve 23.531s  iters   1530  restarts 1  relres=5.2e-09 
+  ic      rtol=1e-08  setup 0.277s  solve 6.770s  iters   1237  restarts 1  relres=5.0e-09 
+  amg     rtol=1e-08  setup 0.620s  solve 0.650s  iters     16  restarts 1  relres=6.4e-09 
+
+=== d=2  m=1000  n=1000000  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 210.905s  iters  20000  restarts 0  relres=2.2e-02 NOT CONVERGED
+  jacobi  rtol=1e-08  setup 0.020s  solve 197.875s  iters   3074  restarts 1  relres=5.6e-09 
+  ic      rtol=1e-08  setup 0.640s  solve 65.399s  iters   2584  restarts 1  relres=4.8e-09 
+  amg     rtol=1e-08  setup 1.737s  solve 2.561s  iters     15  restarts 1  relres=6.5e-09 
+
+Done. Results appended to results/iterative_hpc.csv
+Iterative experiments: d=3  m=[40, 50, 60, 80]  rtol=[1.0e-6]  precond=["none", "jacobi", "ic", "amg"]  BLAS threads=1  → results/iterative_hpc.csv
+Warm-up (compilation) ...
+  none    rtol=1e-06  setup 0.000s  solve 0.658s  iters     13  restarts 0  relres=5.8e-09 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.339s  iters     11  restarts 0  relres=1.2e-07 
+  ic      rtol=1e-06  setup 0.000s  solve 0.349s  iters      7  restarts 0  relres=5.0e-07 
+  amg     rtol=1e-06  setup 0.854s  solve 1.115s  iters      4  restarts 0  relres=6.4e-07 
+
+=== d=3  m=40  n=64000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 0.479s  iters    911  restarts 0  relres=9.9e-07 
+  jacobi  rtol=1e-06  setup 0.001s  solve 0.762s  iters    200  restarts 1  relres=3.6e-07 
+  ic      rtol=1e-06  setup 0.056s  solve 0.158s  iters    107  restarts 1  relres=4.7e-07 
+  amg     rtol=1e-06  setup 0.312s  solve 0.160s  iters     10  restarts 1  relres=9.5e-08 
+
+=== d=3  m=50  n=125000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 1.320s  iters   1153  restarts 0  relres=9.2e-07 
+  jacobi  rtol=1e-06  setup 0.002s  solve 1.891s  iters    250  restarts 1  relres=5.1e-07 
+  ic      rtol=1e-06  setup 0.110s  solve 0.393s  iters    133  restarts 1  relres=4.1e-07 
+  amg     rtol=1e-06  setup 0.414s  solve 0.293s  iters     11  restarts 1  relres=2.1e-07 
+
+=== d=3  m=60  n=216000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 3.267s  iters   1527  restarts 0  relres=1.0e-06 
+  jacobi  rtol=1e-06  setup 0.192s  solve 4.072s  iters    300  restarts 1  relres=5.0e-07 
+  ic      rtol=1e-06  setup 0.393s  solve 0.931s  iters    159  restarts 1  relres=4.6e-07 
+  amg     rtol=1e-06  setup 0.774s  solve 0.618s  iters     13  restarts 1  relres=2.3e-07 
+
+=== d=3  m=80  n=512000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 12.365s  iters   2087  restarts 0  relres=9.8e-07 
+  jacobi  rtol=1e-06  setup 0.007s  solve 13.708s  iters    401  restarts 1  relres=4.9e-07 
+  ic      rtol=1e-06  setup 0.574s  solve 3.208s  iters    212  restarts 1  relres=4.2e-07 
+  amg     rtol=1e-06  setup 1.491s  solve 1.592s  iters     12  restarts 1  relres=1.3e-07 
+
+Done. Results appended to results/iterative_hpc.csv
+Iterative experiments: d=2  m=[500]  rtol=[0.0001, 1.0e-6, 1.0e-10]  precond=["jacobi", "ic", "amg"]  BLAS threads=1  → results/iterative_rtol_hpc.csv
+Warm-up (compilation) ...
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.748s  iters     24  restarts 0  relres=1.0e-06 
+  ic      rtol=1e-06  setup 0.000s  solve 0.349s  iters     12  restarts 0  relres=9.9e-07 
+  amg     rtol=1e-06  setup 0.856s  solve 1.126s  iters      5  restarts 0  relres=2.1e-07 
+
+=== d=2  m=500  n=250000  rtol=0.0001 ===
+  jacobi  rtol=1e-04  setup 0.007s  solve 17.904s  iters   1330  restarts 1  relres=4.8e-05 
+  ic      rtol=1e-04  setup 0.278s  solve 3.912s  iters    722  restarts 1  relres=5.1e-05 
+  amg     rtol=1e-04  setup 0.632s  solve 0.461s  iters     11  restarts 1  relres=2.0e-05 
+
+=== d=2  m=500  n=250000  rtol=1.0e-6 ===
+  jacobi  rtol=1e-06  setup 0.006s  solve 18.766s  iters   1424  restarts 1  relres=5.0e-07 
+  ic      rtol=1e-06  setup 0.089s  solve 5.032s  iters    934  restarts 1  relres=5.0e-07 
+  amg     rtol=1e-06  setup 0.441s  solve 0.731s  iters     13  restarts 1  relres=4.8e-07 
+
+=== d=2  m=500  n=250000  rtol=1.0e-10 ===
+  jacobi  rtol=1e-10  setup 0.006s  solve 21.522s  iters   1636  restarts 1  relres=5.4e-11 
+  ic      rtol=1e-10  setup 0.096s  solve 6.882s  iters   1292  restarts 1  relres=5.9e-11 
+  amg     rtol=1e-10  setup 0.441s  solve 0.893s  iters     18  restarts 1  relres=4.2e-11 
+
+Done. Results appended to results/iterative_rtol_hpc.csv
+Iterative experiments: d=3  m=[80]  rtol=[0.0001, 1.0e-8, 1.0e-10]  precond=["jacobi", "ic", "amg"]  BLAS threads=1  → results/iterative_rtol_hpc.csv
+Warm-up (compilation) ...
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.744s  iters     11  restarts 0  relres=1.2e-07 
+  ic      rtol=1e-06  setup 0.000s  solve 0.347s  iters      7  restarts 0  relres=5.0e-07 
+  amg     rtol=1e-06  setup 0.852s  solve 1.118s  iters      4  restarts 0  relres=6.4e-07 
+
+=== d=3  m=80  n=512000  rtol=0.0001 ===
+  jacobi  rtol=1e-04  setup 0.012s  solve 11.337s  iters    325  restarts 1  relres=4.5e-05 
+  ic      rtol=1e-04  setup 0.737s  solve 2.564s  iters    165  restarts 1  relres=4.6e-05 
+  amg     rtol=1e-04  setup 1.500s  solve 1.130s  iters      9  restarts 1  relres=1.3e-05 
+
+=== d=3  m=80  n=512000  rtol=1.0e-8 ===
+  jacobi  rtol=1e-08  setup 0.006s  solve 16.858s  iters    494  restarts 1  relres=4.3e-09 
+  ic      rtol=1e-08  setup 0.589s  solve 4.327s  iters    273  restarts 1  relres=4.9e-09 
+  amg     rtol=1e-08  setup 1.482s  solve 1.764s  iters     15  restarts 1  relres=1.0e-09 
+
+=== d=3  m=80  n=512000  rtol=1.0e-10 ===
+  jacobi  rtol=1e-10  setup 0.006s  solve 19.971s  iters    586  restarts 1  relres=4.4e-11 
+  ic      rtol=1e-10  setup 0.584s  solve 5.273s  iters    335  restarts 1  relres=4.8e-11 
+  amg     rtol=1e-10  setup 1.486s  solve 1.958s  iters     17  restarts 1  relres=2.4e-11 
+
+Done. Results appended to results/iterative_rtol_hpc.csv
+finished: Sun Nov  8 11:14:17 PM CST 2026
+slurmstepd: error: Detected 2 oom_kill events in StepId=16087809.batch. Some of the step tasks have been OOM Killed.

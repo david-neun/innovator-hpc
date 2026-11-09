@@ -1,0 +1,11 @@
+node: node005   started: Sun Nov  8 10:56:30 PM CST 2026
+Direct experiments: d=3  m=[70]  orderings=["natural"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  natural  order 0.000s  factor 0.060s  solve 0.015s  nnz(L)=883  fill=2.5  relres=1.7e-15
+/cm/local/apps/slurm/var/spool/job16087810/slurm_script: line 22: 1512457 Killed                  julia run_direct.jl -d 3 --m 70 --orderings natural --maxgb 100 --out results/direct_hpc.csv
+Direct experiments: d=3  m=[80]  orderings=["natural"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  natural  order 0.000s  factor 0.114s  solve 0.015s  nnz(L)=883  fill=2.5  relres=1.7e-15
+/cm/local/apps/slurm/var/spool/job16087810/slurm_script: line 23: 1512732 Killed                  julia run_direct.jl -d 3 --m 80 --orderings natural --maxgb 100 --out results/direct_hpc.csv
+finished: Sun Nov  8 11:00:17 PM CST 2026   (if you are reading this, nothing ran out of memory)
+slurmstepd: error: Detected 2 oom_kill events in StepId=16087810.batch. Some of the step tasks have been OOM Killed.

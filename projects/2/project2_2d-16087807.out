@@ -1,0 +1,6 @@
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=2, m=500 (n=250000), rtol=1.0e-8
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 8.6e-11).
+[ Info: Benchmarking...
+  315.177 ms (73 allocations: 247.30 MiB)
