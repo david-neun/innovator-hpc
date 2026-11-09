@@ -11,5 +11,5 @@
 echo "host: $(hostname)  dir: $(pwd)  start: $(date)"
 module load julia
 which julia
-julia david_cortes.jl -n 500
+julia david-neun.jl -n 500
 echo "end: $(date)"
