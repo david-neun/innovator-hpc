@@ -1,0 +1,34 @@
+Q1 d=2 natural  nnzL ~ n^1.48   t_total ~ n^1.45   largest n=640000: fill=168.6 t_total=9.283s
+Q1 d=2 rcm      nnzL ~ n^1.50   t_total ~ n^1.36   largest n=640000: fill=113.1 t_total=6.187s
+Q1 d=2 amd      nnzL ~ n^1.22   t_total ~ n^1.16   largest n=640000: fill=11.2 t_total=1.098s
+Q1 d=2 metis    nnzL ~ n^1.14   t_total ~ n^1.12   largest n=640000: fill=7.3 t_total=4.310s
+Q1 d=2 default  nnzL ~ n^1.20   t_total ~ n^1.13   largest n=1000000: fill=11.6 t_total=1.677s
+Q1 d=3 natural  nnzL ~ n^1.67   t_total ~ n^1.63   largest n=125000: fill=375.1 t_total=6.005s
+Q1 d=3 rcm      nnzL ~ n^1.64   t_total ~ n^1.56   largest n=125000: fill=212.2 t_total=3.216s
+Q1 d=3 amd      nnzL ~ n^1.51   t_total ~ n^1.35   largest n=512000: fill=156.7 t_total=9.739s
+Q1 d=3 metis    nnzL ~ n^1.46   t_total ~ n^1.21   largest n=512000: fill=85.3 t_total=9.503s
+Q1 d=3 default  nnzL ~ n^1.51   t_total ~ n^1.30   largest n=512000: fill=156.7 t_total=9.609s
+Q2 d=2 none    iters ~ n^0.63 (= m^1.26)   t_total ~ n^1.69   largest n=1000000: iters=20000 setup=0.000s solve=210.905s
+Q2 d=2 jacobi  iters ~ n^0.50 (= m^1.00)   t_total ~ n^1.55   largest n=1000000: iters=3074 setup=0.020s solve=197.875s
+Q2 d=2 ic      iters ~ n^0.50 (= m^0.99)   t_total ~ n^1.58   largest n=1000000: iters=2584 setup=0.640s solve=65.399s
+Q2 d=2 amg     iters ~ n^0.03 (= m^0.05)   t_total ~ n^1.10   largest n=1000000: iters=15 setup=1.737s solve=2.561s
+Q2 d=2 amgsa   iters ~ n^0.14 (= m^0.29)   t_total ~ n^1.17   largest n=1000000: iters=32 setup=0.955s solve=3.646s
+Q2 d=3 none    iters ~ n^0.47 (= m^1.40)   t_total ~ n^1.53   largest n=512000: iters=2087 setup=0.000s solve=12.365s
+Q2 d=3 jacobi  iters ~ n^0.34 (= m^1.03)   t_total ~ n^1.41   largest n=512000: iters=401 setup=0.007s solve=13.708s
+Q2 d=3 ic      iters ~ n^0.31 (= m^0.93)   t_total ~ n^1.27   largest n=512000: iters=212 setup=0.574s solve=3.208s
+Q2 d=3 amg     iters ~ n^0.15 (= m^0.44)   t_total ~ n^1.16   largest n=512000: iters=12 setup=1.489s solve=1.460s
+Q2 d=3 amgsa   iters ~ n^0.11 (= m^0.33)   t_total ~ n^1.17   largest n=512000: iters=19 setup=0.897s solve=1.525s
+Q3 d=2 jacobi / Cholesky-AMD time ratio — n=2500: 8.00, n=10000: 14.13, n=40000: 28.77, n=160000: 29.14, n=250000: 44.96, n=640000: 94.45
+Q3 d=2 ic / Cholesky-AMD time ratio — n=2500: 2.33, n=10000: 3.63, n=40000: 6.93, n=160000: 7.44, n=250000: 13.45, n=640000: 27.76
+Q3 d=2 amg / Cholesky-AMD time ratio — n=2500: 2.90, n=10000: 2.78, n=40000: 2.62, n=160000: 1.77, n=250000: 2.42, n=640000: 2.56
+Q3 d=2 amgsa / Cholesky-AMD time ratio — n=2500: 2.07, n=10000: 2.12, n=40000: 2.45, n=160000: 1.44, n=250000: 2.46, n=640000: 3.02
+Q3 d=3 jacobi / Cholesky-AMD time ratio — n=1000: 0.93, n=8000: 1.82, n=27000: 1.40, n=64000: 1.76, n=125000: 1.67, n=216000: 1.52, n=512000: 1.41
+Q3 d=3 ic / Cholesky-AMD time ratio — n=1000: 0.60, n=8000: 0.72, n=27000: 0.48, n=64000: 0.49, n=125000: 0.44, n=216000: 0.47, n=512000: 0.39
+Q3 d=3 amg / Cholesky-AMD time ratio — n=1000: 1.07, n=8000: 1.20, n=27000: 0.71, n=64000: 1.09, n=125000: 0.62, n=216000: 0.49, n=512000: 0.30
+Q3 d=3 amgsa / Cholesky-AMD time ratio — n=1000: 0.84, n=8000: 0.82, n=27000: 0.57, n=64000: 0.94, n=125000: 0.51, n=216000: 0.32, n=512000: 0.25
+rtol d=2 m=500 jacobi: 1e-10 -> 1636 it, 21.528s; 1e-08 -> 1530 it, 23.561s; 1e-06 -> 1424 it, 18.772s; 1e-04 -> 1330 it, 17.911s
+rtol d=2 m=500 ic: 1e-10 -> 1292 it, 6.977s; 1e-08 -> 1237 it, 7.047s; 1e-06 -> 934 it, 5.121s; 1e-04 -> 722 it, 4.190s
+rtol d=2 m=500 amg: 1e-10 -> 18 it, 1.334s; 1e-08 -> 16 it, 1.269s; 1e-06 -> 13 it, 1.172s; 1e-04 -> 11 it, 1.093s
+rtol d=3 m=80 jacobi: 1e-10 -> 586 it, 19.977s; 1e-08 -> 494 it, 16.864s; 1e-06 -> 401 it, 13.715s; 1e-04 -> 325 it, 11.348s
+rtol d=3 m=80 ic: 1e-10 -> 335 it, 5.857s; 1e-08 -> 273 it, 4.916s; 1e-06 -> 212 it, 3.782s; 1e-04 -> 165 it, 3.301s
+rtol d=3 m=80 amg: 1e-10 -> 17 it, 3.444s; 1e-08 -> 15 it, 3.245s; 1e-06 -> 12 it, 2.949s; 1e-04 -> 9 it, 2.630s
