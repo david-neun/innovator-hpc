@@ -1,0 +1,46 @@
+== small checks (v6 branches) ==
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=3, m=2 (n=8), rtol=1.0e-6
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 2.4e-16).
+[ Info: Benchmarking...
+  8.566 μs (54 allocations: 4.91 KiB)
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=3, m=12 (n=1728), rtol=1.0e-10
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 1.8e-11).
+[ Info: Benchmarking...
+  3.231 ms (943 allocations: 3.16 MiB)
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=2, m=7 (n=49), rtol=1.0e-12
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 1.7e-15).
+[ Info: Benchmarking...
+  22.954 μs (54 allocations: 25.26 KiB)
+== official 3D timing ==
+== small checks (v6 branches) ==
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=3, m=2 (n=8), rtol=1.0e-6
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 2.4e-16).
+[ Info: Benchmarking...
+  8.585 μs (54 allocations: 4.91 KiB)
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=3, m=12 (n=1728), rtol=1.0e-10
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 1.8e-11).
+[ Info: Benchmarking...
+  3.224 ms (943 allocations: 3.16 MiB)
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=2, m=7 (n=49), rtol=1.0e-12
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 1.7e-15).
+[ Info: Benchmarking...
+  22.836 μs (54 allocations: 25.26 KiB)
+== official 3D timing ==
+[ Info: Testing david_cortes.jl
+[ Info: Running with d=3, m=80 (n=512000), rtol=1.0e-6
+[ Info: Julia threads: 1, BLAS threads: 24
+[ Info: Your solution meets the tolerance (relative residual 8.9e-7).
+[ Info: Benchmarking...
+  1.924 s (1531 allocations: 1.47 GiB)
