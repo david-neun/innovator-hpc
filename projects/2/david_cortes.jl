@@ -57,7 +57,10 @@ const LIGHT_SMOOTH = true    # true: one forward Gauss–Seidel sweep before, on
                              # more iterations); false: the package's default symmetric sweeps
 const IC_MEMORY    = 0       # extra entries per column kept by the incomplete factor when :ic is used
 
+const SMALL_N = 1_000     # below this, a direct solve takes a millisecond and is the robust choice
+
 function solve3d(A::SparseMatrixCSC{Float64,Int}, b::Vector{Float64}; rtol = 1e-8)
+    size(A, 1) <= SMALL_N && return cholesky(A) \ b
     # The handout's advice: multithreaded BLAS level-1 calls interleaved with the
     # single-threaded sparse product can slow CG down. Restrict BLAS to one thread
     # for the duration of the solve, and put the global setting back afterwards.
@@ -66,10 +69,15 @@ function solve3d(A::SparseMatrixCSC{Float64,Int}, b::Vector{Float64}; rtol = 1e-
     try
         M = PRECOND_3D == :amgsa ? _amgsa_preconditioner(A) :
             PRECOND_3D == :amgrs ? _amgrs_preconditioner(A) : _ic_preconditioner(A)
-        return _pcg(A, b, M, rtol)
+        x = _pcg(A, b, M, rtol)
+        # Safety net: PCG must deliver the true residual. If it did not (or the
+        # preconditioner construction failed above), fall back to the exact solve.
+        _relres(A, b, x) <= rtol && return x
+    catch
     finally
         BLAS.set_num_threads(nthreads)
     end
+    return cholesky(A) \ b
 end
 
 # M⁻¹ r = one multigrid V-cycle built from the entries of A alone ("algebraic").
