@@ -1,4 +1,4 @@
 # Ignore local Julia workspace files
 julia/
 .julia/
-*.out
+*.out.DS_Store
