@@ -1,0 +1,12 @@
+node: node009   started: Tue Nov 10 08:42:33 PM CST 2026
+tuning solve3d at d=3 m=80 rtol=1.0e-6  (n = 512000)
+
+A_tight0.1       best 2.000s  runs 2.04/2.19/2.00  iters  17  restarts 0  relres 9.2e-07 
+B_tight0.1_fwdbwd best 1.974s  runs 1.97/2.03/2.18  iters  25  restarts 1  relres 3.0e-07 
+C_tight0.05_fwdbwd best 1.872s  runs 1.87/1.87/1.89  iters  23  restarts 0  relres 8.9e-07 
+D_tight0.1_fwdbwd_ml6 best 1.983s  runs 1.99/2.00/1.98  iters  25  restarts 1  relres 3.0e-07 
+E_tight0.1_fwdbwd_mc200 best 1.809s  runs 1.97/1.81/1.99  iters  25  restarts 1  relres 2.8e-07 
+F_tight0.1_ml6_mc200 best 1.968s  runs 1.97/1.99/1.97  iters  17  restarts 0  relres 9.2e-07 
+
+done → results/tune3d_b_hpc.csv
+finished: Tue Nov 10 08:43:37 PM CST 2026

@@ -1,0 +1,190 @@
+node: node009   started: Tue Nov 10 08:13:04 PM CST 2026
+Direct experiments: d=2  m=[50, 100, 200, 400]  orderings=["default", "natural", "rcm", "amd", "metis"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  default  order 0.000s  factor 0.077s  solve 0.015s  nnz(L)=354  fill=1.2  relres=1.0e-14
+  natural  order 0.000s  factor 0.008s  solve 0.000s  nnz(L)=519  fill=1.8  relres=2.0e-14
+  rcm      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=428  fill=1.5  relres=1.1e-14
+  amd      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=354  fill=1.2  relres=1.0e-14
+  metis    order 0.002s  factor 0.000s  solve 0.000s  nnz(L)=394  fill=1.4  relres=1.4e-14
+
+=== d=2  m=50  n=2500 ===
+  default  order 0.000s  factor 0.002s  solve 0.000s  nnz(L)=3.59e+04  fill=2.9  relres=1.1e-12
+  natural  order 0.000s  factor 0.003s  solve 0.000s  nnz(L)=1.44e+05  fill=11.7  relres=8.7e-13
+  rcm      order 0.000s  factor 0.003s  solve 0.000s  nnz(L)=8.7e+04  fill=7.1  relres=1.4e-12
+  amd      order 0.001s  factor 0.002s  solve 0.000s  nnz(L)=3.59e+04  fill=2.9  relres=1.1e-12
+  metis    order 0.007s  factor 0.002s  solve 0.000s  nnz(L)=4.02e+04  fill=3.3  relres=1.0e-12
+
+=== d=2  m=100  n=10000 ===
+  default  order 0.000s  factor 0.012s  solve 0.001s  nnz(L)=3.31e+05  fill=6.7  relres=3.2e-12
+  natural  order 0.000s  factor 0.023s  solve 0.001s  nnz(L)=1.11e+06  fill=22.4  relres=3.9e-12
+  rcm      order 0.001s  factor 0.016s  solve 0.001s  nnz(L)=7.68e+05  fill=15.5  relres=3.7e-12
+  amd      order 0.002s  factor 0.008s  solve 0.001s  nnz(L)=3.31e+05  fill=6.7  relres=3.4e-12
+  metis    order 0.031s  factor 0.011s  solve 0.001s  nnz(L)=2.25e+05  fill=4.5  relres=3.8e-12
+
+=== d=2  m=200  n=40000 ===
+  default  order 0.000s  factor 0.042s  solve 0.004s  nnz(L)=1.6e+06  fill=8.1  relres=1.4e-11
+  natural  order 0.000s  factor 0.109s  solve 0.012s  nnz(L)=8.87e+06  fill=44.6  relres=1.7e-11
+  rcm      order 0.003s  factor 0.090s  solve 0.009s  nnz(L)=6e+06  fill=30.1  relres=1.6e-11
+  amd      order 0.013s  factor 0.030s  solve 0.004s  nnz(L)=1.6e+06  fill=8.1  relres=1.4e-11
+  metis    order 0.143s  factor 0.049s  solve 0.006s  nnz(L)=1.07e+06  fill=5.4  relres=1.4e-11
+
+=== d=2  m=400  n=160000 ===
+  default  order 0.000s  factor 0.382s  solve 0.018s  nnz(L)=7.79e+06  fill=9.8  relres=5.4e-11
+  natural  order 0.000s  factor 1.011s  solve 0.081s  nnz(L)=6.78e+07  fill=84.9  relres=7.5e-11
+  rcm      order 0.017s  factor 0.664s  solve 0.061s  nnz(L)=4.63e+07  fill=58.0  relres=6.9e-11
+  amd      order 0.037s  factor 0.345s  solve 0.018s  nnz(L)=7.79e+06  fill=9.8  relres=5.4e-11
+  metis    order 0.656s  factor 0.228s  solve 0.026s  nnz(L)=4.97e+06  fill=6.2  relres=6.0e-11
+
+Done. Results appended to results/direct_hpc.csv
+Direct experiments: d=3  m=[10, 20, 30]  orderings=["default", "natural", "rcm", "amd", "metis"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  default  order 0.000s  factor 0.060s  solve 0.015s  nnz(L)=536  fill=1.5  relres=1.8e-15
+  natural  order 0.000s  factor 0.008s  solve 0.000s  nnz(L)=883  fill=2.5  relres=1.7e-15
+  rcm      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=693  fill=2.0  relres=1.7e-15
+  amd      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=536  fill=1.5  relres=1.8e-15
+  metis    order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=525  fill=1.5  relres=1.9e-15
+
+=== d=3  m=10  n=1000 ===
+  default  order 0.000s  factor 0.003s  solve 0.000s  nnz(L)=4.51e+04  fill=7.1  relres=6.3e-15
+  natural  order 0.000s  factor 0.002s  solve 0.000s  nnz(L)=1.02e+05  fill=16.0  relres=9.8e-15
+  rcm      order 0.000s  factor 0.002s  solve 0.000s  nnz(L)=6.64e+04  fill=10.4  relres=7.9e-15
+  amd      order 0.001s  factor 0.002s  solve 0.000s  nnz(L)=4.51e+04  fill=7.0  relres=6.5e-15
+  metis    order 0.003s  factor 0.002s  solve 0.000s  nnz(L)=3.53e+04  fill=5.5  relres=7.6e-15
+
+=== d=3  m=20  n=8000 ===
+  default  order 0.000s  factor 0.026s  solve 0.001s  nnz(L)=9.94e+05  fill=18.5  relres=5.6e-14
+  natural  order 0.000s  factor 0.051s  solve 0.003s  nnz(L)=3.24e+06  fill=60.4  relres=7.2e-14
+  rcm      order 0.001s  factor 0.027s  solve 0.002s  nnz(L)=1.97e+06  fill=36.7  relres=5.6e-14
+  amd      order 0.005s  factor 0.016s  solve 0.001s  nnz(L)=9.94e+05  fill=18.5  relres=5.5e-14
+  metis    order 0.040s  factor 0.017s  solve 0.001s  nnz(L)=6.44e+05  fill=12.0  relres=5.7e-14
+
+=== d=3  m=30  n=27000 ===
+  default  order 0.000s  factor 0.116s  solve 0.008s  nnz(L)=6.25e+06  fill=34.0  relres=1.6e-13
+  natural  order 0.000s  factor 0.561s  solve 0.027s  nnz(L)=2.48e+07  fill=135.0  relres=2.1e-13
+  rcm      order 0.002s  factor 0.451s  solve 0.016s  nnz(L)=1.43e+07  fill=78.1  relres=1.8e-13
+  amd      order 0.017s  factor 0.119s  solve 0.008s  nnz(L)=6.18e+06  fill=33.6  relres=1.5e-13
+  metis    order 0.165s  factor 0.097s  solve 0.008s  nnz(L)=4.37e+06  fill=23.8  relres=1.6e-13
+
+Done. Results appended to results/direct_hpc.csv
+Direct experiments: d=2  m=[800]  orderings=["default", "amd", "metis"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  default  order 0.000s  factor 0.063s  solve 0.015s  nnz(L)=354  fill=1.2  relres=1.0e-14
+  amd      order 0.000s  factor 0.008s  solve 0.000s  nnz(L)=354  fill=1.2  relres=1.0e-14
+  metis    order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=394  fill=1.4  relres=1.4e-14
+
+=== d=2  m=800  n=640000 ===
+  default  order 0.000s  factor 1.056s  solve 0.077s  nnz(L)=3.59e+07  fill=11.2  relres=2.2e-10
+  amd      order 0.167s  factor 0.855s  solve 0.077s  nnz(L)=3.59e+07  fill=11.2  relres=2.2e-10
+  metis    order 2.978s  factor 1.228s  solve 0.104s  nnz(L)=2.32e+07  fill=7.3  relres=2.4e-10
+
+Done. Results appended to results/direct_hpc.csv
+Iterative experiments: d=2  m=[50, 100, 200, 400, 800]  rtol=[1.0e-8]  precond=["none", "jacobi", "ic", "amg", "amgsa"]  BLAS threads=1  → results/iterative_hpc.csv
+Warm-up (compilation) ...
+  none    rtol=1e-06  setup 0.000s  solve 0.640s  iters     34  restarts 0  relres=8.9e-07 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.335s  iters     24  restarts 0  relres=1.0e-06 
+  ic      rtol=1e-06  setup 0.000s  solve 0.350s  iters     12  restarts 0  relres=9.9e-07 
+  amg     rtol=1e-06  setup 0.936s  solve 1.055s  iters      5  restarts 0  relres=2.1e-07 
+  amgsa   rtol=1e-06  setup 0.081s  solve 0.512s  iters      9  restarts 1  relres=3.2e-07 
+
+=== d=2  m=50  n=2500  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 0.020s  iters   1368  restarts 0  relres=8.9e-09 
+  jacobi  rtol=1e-08  setup 0.000s  solve 0.019s  iters    153  restarts 1  relres=3.8e-09 
+  ic      rtol=1e-08  setup 0.001s  solve 0.004s  iters    127  restarts 1  relres=3.4e-09 
+  amg     rtol=1e-08  setup 0.002s  solve 0.005s  iters     13  restarts 1  relres=2.7e-09 
+  amgsa   rtol=1e-08  setup 0.002s  solve 0.003s  iters     14  restarts 1  relres=5.9e-09 
+
+=== d=2  m=100  n=10000  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 0.232s  iters   3822  restarts 0  relres=9.4e-09 
+  jacobi  rtol=1e-08  setup 0.000s  solve 0.155s  iters    305  restarts 1  relres=4.3e-09 
+  ic      rtol=1e-08  setup 0.004s  solve 0.036s  iters    252  restarts 1  relres=5.1e-09 
+  amg     rtol=1e-08  setup 0.010s  solve 0.020s  iters     13  restarts 1  relres=1.8e-09 
+  amgsa   rtol=1e-08  setup 0.006s  solve 0.017s  iters     18  restarts 1  relres=1.0e-09 
+
+=== d=2  m=200  n=40000  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 2.137s  iters   8139  restarts 0  relres=9.2e-09 
+  jacobi  rtol=1e-08  setup 0.001s  solve 1.343s  iters    610  restarts 1  relres=4.4e-09 
+  ic      rtol=1e-08  setup 0.020s  solve 0.303s  iters    496  restarts 1  relres=5.1e-09 
+  amg     rtol=1e-08  setup 0.044s  solve 0.078s  iters     13  restarts 1  relres=5.5e-09 
+  amgsa   rtol=1e-08  setup 0.029s  solve 0.086s  iters     22  restarts 1  relres=1.0e-09 
+
+=== d=2  m=400  n=160000  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 23.474s  iters  19445  restarts 1  relres=5.0e-09 
+  jacobi  rtol=1e-08  setup 0.003s  solve 11.655s  iters   1222  restarts 1  relres=5.3e-09 
+  ic      rtol=1e-08  setup 0.063s  solve 2.913s  iters    923  restarts 1  relres=5.1e-09 
+  amg     rtol=1e-08  setup 0.171s  solve 0.539s  iters     14  restarts 1  relres=5.5e-09 
+  amgsa   rtol=1e-08  setup 0.081s  solve 0.494s  iters     28  restarts 1  relres=1.2e-09 
+
+=== d=2  m=800  n=640000  rtol=1.0e-8 ===
+  none    rtol=1e-08  setup 0.000s  solve 126.617s  iters  20000  restarts 0  relres=1.3e-03 NOT CONVERGED
+  jacobi  rtol=1e-08  setup 0.008s  solve 103.733s  iters   2455  restarts 1  relres=5.5e-09 
+  ic      rtol=1e-08  setup 0.442s  solve 30.052s  iters   1967  restarts 1  relres=5.3e-09 
+  amg     rtol=1e-08  setup 1.127s  solve 1.687s  iters     14  restarts 1  relres=5.5e-09 
+  amgsa   rtol=1e-08  setup 0.890s  solve 2.423s  iters     33  restarts 1  relres=2.4e-09 
+
+Done. Results appended to results/iterative_hpc.csv
+Iterative experiments: d=3  m=[10, 20, 30]  rtol=[1.0e-6]  precond=["none", "jacobi", "ic", "amg", "amgsa"]  BLAS threads=1  → results/iterative_hpc.csv
+Warm-up (compilation) ...
+  none    rtol=1e-06  setup 0.000s  solve 0.621s  iters     13  restarts 0  relres=5.8e-09 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.337s  iters     11  restarts 0  relres=1.2e-07 
+  ic      rtol=1e-06  setup 0.000s  solve 0.351s  iters      7  restarts 0  relres=5.0e-07 
+  amg     rtol=1e-06  setup 0.914s  solve 1.060s  iters      4  restarts 0  relres=6.4e-07 
+  amgsa   rtol=1e-06  setup 0.081s  solve 0.513s  iters      8  restarts 1  relres=1.0e-07 
+
+=== d=3  m=10  n=1000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 0.001s  iters    116  restarts 0  relres=8.8e-07 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.002s  iters     48  restarts 1  relres=3.5e-07 
+  ic      rtol=1e-06  setup 0.001s  solve 0.001s  iters     30  restarts 1  relres=3.2e-07 
+  amg     rtol=1e-06  setup 0.002s  solve 0.001s  iters      5  restarts 1  relres=2.3e-07 
+  amgsa   rtol=1e-06  setup 0.001s  solve 0.001s  iters     10  restarts 1  relres=2.3e-07 
+
+=== d=3  m=20  n=8000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 0.020s  iters    330  restarts 0  relres=7.9e-07 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.040s  iters     95  restarts 1  relres=3.1e-07 
+  ic      rtol=1e-06  setup 0.007s  solve 0.009s  iters     60  restarts 1  relres=4.1e-07 
+  amg     rtol=1e-06  setup 0.013s  solve 0.013s  iters      8  restarts 1  relres=2.9e-08 
+  amgsa   rtol=1e-06  setup 0.008s  solve 0.009s  iters     10  restarts 1  relres=1.0e-07 
+
+=== d=3  m=30  n=27000  rtol=1.0e-6 ===
+  none    rtol=1e-06  setup 0.000s  solve 0.141s  iters    632  restarts 0  relres=8.9e-07 
+  jacobi  rtol=1e-06  setup 0.000s  solve 0.201s  iters    143  restarts 1  relres=5.3e-07 
+  ic      rtol=1e-06  setup 0.022s  solve 0.046s  iters     82  restarts 1  relres=4.1e-07 
+  amg     rtol=1e-06  setup 0.053s  solve 0.048s  iters      9  restarts 1  relres=2.4e-07 
+  amgsa   rtol=1e-06  setup 0.036s  solve 0.045s  iters     14  restarts 1  relres=3.1e-07 
+
+Done. Results appended to results/iterative_hpc.csv
+Iterative experiments: d=3  m=[40, 50, 60]  rtol=[1.0e-6]  precond=["amgsa"]  BLAS threads=1  → results/iterative_hpc.csv
+Warm-up (compilation) ...
+  amgsa   rtol=1e-06  setup 0.922s  solve 1.432s  iters      8  restarts 1  relres=1.0e-07 
+
+=== d=3  m=40  n=64000  rtol=1.0e-6 ===
+  amgsa   rtol=1e-06  setup 0.281s  solve 0.127s  iters     16  restarts 1  relres=2.8e-07 
+
+=== d=3  m=50  n=125000  rtol=1.0e-6 ===
+  amgsa   rtol=1e-06  setup 0.319s  solve 0.255s  iters     16  restarts 1  relres=4.3e-07 
+
+=== d=3  m=60  n=216000  rtol=1.0e-6 ===
+  amgsa   rtol=1e-06  setup 0.452s  solve 0.462s  iters     16  restarts 1  relres=4.9e-07 
+
+Done. Results appended to results/iterative_hpc.csv
+Iterative experiments: d=2  m=[500, 1000]  rtol=[1.0e-8]  precond=["amgsa"]  BLAS threads=1  → results/iterative_hpc.csv
+Warm-up (compilation) ...
+  amgsa   rtol=1e-06  setup 0.931s  solve 1.439s  iters      9  restarts 1  relres=3.2e-07 
+
+=== d=2  m=500  n=250000  rtol=1.0e-8 ===
+  amgsa   rtol=1e-08  setup 0.535s  solve 0.755s  iters     28  restarts 1  relres=3.1e-09 
+
+=== d=2  m=1000  n=1000000  rtol=1.0e-8 ===
+  amgsa   rtol=1e-08  setup 0.955s  solve 3.646s  iters     32  restarts 1  relres=3.6e-09 
+
+Done. Results appended to results/iterative_hpc.csv
+Direct experiments: d=2  m=[800]  orderings=["natural", "rcm"]  → results/direct_hpc.csv
+Warm-up (compilation) ...
+  natural  order 0.000s  factor 0.064s  solve 0.015s  nnz(L)=519  fill=1.8  relres=2.0e-14
+  rcm      order 0.000s  factor 0.000s  solve 0.000s  nnz(L)=428  fill=1.5  relres=1.1e-14
+
+=== d=2  m=800  n=640000 ===
+  natural  order 0.024s  factor 8.663s  solve 0.595s  nnz(L)=5.39e+08  fill=168.6  relres=3.1e-10
+  rcm      order 0.072s  factor 5.699s  solve 0.417s  nnz(L)=3.61e+08  fill=113.1  relres=3.0e-10
+
+Done. Results appended to results/direct_hpc.csv
+finished: Tue Nov 10 08:21:46 PM CST 2026

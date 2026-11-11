@@ -1,0 +1,16 @@
+node: node008   started: Tue Nov 10 08:13:04 PM CST 2026
+tuning solve3d at d=3 m=80 rtol=1.0e-6  (n = 512000)
+
+sa_default       best 2.194s  runs 2.24/2.38/2.19  iters  19  restarts 1  relres 2.0e-07 
+sa_tight0.3      best 2.119s  runs 2.30/2.12/2.12  iters  18  restarts 1  relres 6.0e-07 
+sa_tight0.1      best 1.991s  runs 1.99/2.00/1.99  iters  17  restarts 0  relres 9.2e-07 
+sa_x0jacobi      best 2.169s  runs 2.33/2.18/2.17  iters  18  restarts 1  relres 6.0e-07 
+sa_mc50          best 2.116s  runs 2.28/2.13/2.12  iters  18  restarts 1  relres 6.0e-07 
+sa_mc200         best 2.107s  runs 2.30/2.11/2.11  iters  18  restarts 1  relres 6.0e-07 
+sa_ml6           best 2.092s  runs 2.30/2.12/2.09  iters  18  restarts 1  relres 6.0e-07 
+sa_gs2           best 2.533s  runs 2.74/2.54/2.53  iters  14  restarts 1  relres 2.8e-07 
+sa_fwdbwd        best 2.006s  runs 2.18/2.01/2.02  iters  25  restarts 1  relres 2.9e-07 
+sa_theta0.05     best 2.755s  runs 2.91/2.76/2.76  iters  10  restarts 1  relres 2.9e-07 
+/cm/local/apps/slurm/var/spool/job16092828/slurm_script: line 12: 4180268 Killed                  julia tune3d.jl
+finished: Tue Nov 10 08:21:36 PM CST 2026
+slurmstepd: error: Detected 1 oom_kill event in StepId=16092828.batch. Some of the step tasks have been OOM Killed.
