@@ -5,7 +5,7 @@
 # solve2d(A, b; rtol) and solve3d(A, b; rtol) return x with
 #       ‖b − A x‖₂ / ‖b‖₂ ≤ rtol
 # for the sparse SPD diffusion systems built by problem.jl.
-# Neither function modifies A or b.
+# the functions do not modify A or b.
 #
 # Method choice (from the experiments in run_direct.jl / run_iterative.jl,
 # measured on the grading node; see the report):
@@ -23,6 +23,9 @@
 #         variants are kept below for comparison.
 #
 # Packages required (registered): Krylov, AlgebraicMultigrid, LimitedLDLFactorizations
+# my repo https://github.com/david-neun/innovator-hpc/
+# here I include the code for:
+# plotting, timing, and the solver functions themselves. 
 # =====================================================================
 
 # test.jl loads this file inside its own module → load everything here.
