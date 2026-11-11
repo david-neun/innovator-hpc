@@ -17,11 +17,14 @@
 #         aggregation algebraic multigrid. Fill in 3D grows like n^{4/3}
 #         and factor time like n², so the direct method falls behind early;
 #         multigrid is the only preconditioner whose iteration count does
-#         not grow with m (17–19 iterations at m = 80 against 212 for
+#         not grow with m (17–25 iterations at m = 80 against 212 for
 #         incomplete Cholesky), and smoothed aggregation has the cheapest
-#         setup. Krylov is asked for a tighter tolerance than rtol so that
-#         the true-residual check below passes on the first try (one CG
-#         call instead of two). Incomplete Cholesky is kept as a variant.
+#         setup. Two measured refinements (tune3d.jl, tune3d_b.jl): one
+#         forward Gauss–Seidel sweep before and one backward sweep after
+#         coarse correction (a cheaper, still symmetric V-cycle), and
+#         asking Krylov for a tolerance tighter than rtol so that the
+#         true-residual check below passes on the first try (one CG call
+#         instead of two). Incomplete Cholesky is kept as a variant.
 #
 # Packages required (registered): Krylov, AlgebraicMultigrid, LimitedLDLFactorizations
 #
@@ -48,9 +51,9 @@ end
 # 3D : preconditioned conjugate gradient
 # ---------------------------------------------------------------------
 const PRECOND_3D   = :amgsa  # :amgsa (smoothed-aggregation AMG), :amgrs (Ruge–Stüben AMG) or :ic (incomplete Cholesky)
-const INNER_TOL    = 0.1     # Krylov's own stopping test uses the preconditioned residual; ask it for
+const INNER_TOL    = 0.05    # Krylov's own stopping test uses the preconditioned residual; ask it for
                              # INNER_TOL × rtol so the true residual is already below rtol when it returns
-const LIGHT_SMOOTH = false   # true: one forward Gauss–Seidel sweep before, one backward after (cheaper cycle,
+const LIGHT_SMOOTH = true    # true: one forward Gauss–Seidel sweep before, one backward after (cheaper cycle,
                              # more iterations); false: the package's default symmetric sweeps
 const IC_MEMORY    = 0       # extra entries per column kept by the incomplete factor when :ic is used
 
